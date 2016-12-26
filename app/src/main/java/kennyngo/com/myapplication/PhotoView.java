@@ -33,7 +33,7 @@ public class PhotoView extends GVRMain {
 
         objects = new ArrayList<>();
 
-        for (int i = 0; i <= m360Image.length; i++){
+        for (int i = 0; i < m360Image.length; i++){
             objects.add(i, createObject(gvrContext, i));
         }
 
@@ -55,7 +55,7 @@ public class PhotoView extends GVRMain {
             case MotionEvent.ACTION_DOWN:
                 if(scene != null){
                     currentImage++;
-                    if(currentImage > m360Image.length)
+                    if(currentImage > m360Image.length - 1)
                         currentImage = 0;
                     scene.removeAllSceneObjects();
                     scene.addSceneObject(objects.get(currentImage));
